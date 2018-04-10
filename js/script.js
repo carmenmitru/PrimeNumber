@@ -2,16 +2,21 @@
 function checkNumberIfPrime(){
     var inputNumber = document.getElementById('nr').value;
     var result = document.getElementById('result');
-    if(isNumeric(inputNumber) == true){
-        if(isPrime(inputNumber) == true){
-            result.innerHTML = "Number is prime";
-        }else{
-            result.innerHTML = "Number is not prime";
-        }
+    if(inputNumber.length == 0){
+        alert('Please insert a number');
     }else{
-        clearInput();
-        alert('Not valid input string!');
+        if(isNumeric(inputNumber) == true){
+            if(isPrime(inputNumber) == true){
+                result.innerHTML = "Number is prime";
+            }else{
+                result.innerHTML = "Number is not prime";
+            }
+        }else{
+            clearInput();
+            alert('Not valid input string!');
+        }
     }
+    
     
 } 
 function isNumeric(num){
